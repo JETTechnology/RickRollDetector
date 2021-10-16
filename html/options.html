@@ -3,21 +3,28 @@
 <head><title>Rick Roll Detector Options</title></head>
 <body>
 
-<label for="enabled">Enable Auto Detector(If disabled, This extension will not warn you of rickrolls. It is suggested to copy the url at the site after you disable this plugin and then copy it here.)</label>
-<br>
+<label for="enabled">Enable Auto Detector(If disabled, This extension will not warn you of rickrolls.)</label>
+<br />
 <input type="checkbox" id="enabled" name="enabled" value="enabled">
-<br>
+<br />
 <label for="rrsenabled">Enable Risky Rickroll Protection</label>
-<br>
+<br />
 <input type="checkbox" id="rrsenabled" name="rrsenabled" value="rrsenabled">
-<br>
-<label for="whitelisted_urls">Whitelisted URLS (separate with a comma)</label>
-<br>
+<br />
+<label for="whitelisted_urls">Whitelisted URLS (separate with a comma, only includes the Scheme(e.g. https://, http://) and the Domain Name(e.g. www.google.com, translate.google.com) of the url)</label>
+<br />
 <textarea type="text" id="whitelisted_urls" name="whitelisted_urls" cols="40" rows="5" required></textarea>
-<br>
-
+<br />
+<label for="sentimentAnalyse">Strictess(from 1 to 10, see manual for more details)</label>
+<br />
+<input type="number" id="sentimentAnalyse" name="sentimentAnalyse" required></input>
+<br />
+<label for="overideSentimentList">Overide Default Sentiment List(Replace with your own list of words that identifies as a possible rick roll indication, separated by commas)</label>
+<br />
+<textarea type="text" id="overideSentimentList" name="overideSentimentList" cols="40" rows="5" required></textarea>
 
 <div id="status"></div>
+<br />
 <button id="save">Save</button>
 <button id="reset">Reset to Default Settings</button>
 

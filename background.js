@@ -1,11 +1,16 @@
 let defaultop = {
     whitelisted_website: ["https://docs.google.com", "https://www.instagram.com", "https://www.twitter.com", "https://www.facebook.com", "https://www.google.com"],
     enabled: true,
-    rrsenabled: true
+    rrsenabled: true,
+    sentimentAnalyse: 7,
+    overideSentimentList: []
 }
 
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    console.log("Client Updated URL. Checking if There are rick rolls.")
+let baseRRSURL = "https://RickRollBackend.jerry2006.repl.co"
+console.log("------Started Rick Roll Protection Service------")
+
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+
     chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
     var pathArray = tabs[0].url.split( '/' );
     var protocol = pathArray[0];
@@ -22,7 +27,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
                     if(res.error == false && items.rrsenabled == true){
                         if(res.result.includes(fullUrl) == true){
-                            console.log("rick roll detected!")
                             chrome.tabs.update({ url: chrome.runtime.getURL("html/warning.html") + "?rrs=true&url="+fullUrl });
 
                         }
@@ -31,9 +35,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                                 
                 })
 
-                    fetch(fullUrl).then(r => r.text()).then(result => {
-                        if(result.includes("dQw4w9WgXcQ") == true){
-                            console.log("rick roll detected!")
+                    fetch(fullUrl).then(r => r.text()).then(async result => {
+                        let res = await analyse(result, items)
+                        console.log((11 - parseInt(items.sentimentAnalyse)), res)
+                        if(res > (11 - parseInt(items.sentimentAnalyse))){
                             chrome.tabs.update({ url: chrome.runtime.getURL("html/warning.html") + "?url="+fullUrl });
                         }
 
@@ -66,12 +71,33 @@ function getQueryString(name, url = window.location.href) {
 
 
 
-chrome.runtime.onInstalled.addListener(function(details){
-    if(details.reason == "install"){
-        //call a function to handle a first install
-        chrome.tabs.create({ url: chrome.runtime.getURL("informations/welcome.pdf") });
-    }else if(details.reason == "update"){
-        //call a function to handle an update
-        chrome.tabs.create({ url: chrome.runtime.getURL("informations/update.pdf") });
+// chrome.runtime.onInstalled.addListener(function(details){
+//     if(details.reason == "install"){
+//         //call a function to handle a first install
+//         chrome.tabs.create({ url: chrome.runtime.getURL("informations/welcome.pdf") });
+//     }else if(details.reason == "update"){
+//         //call a function to handle an update
+//         chrome.tabs.create({ url: chrome.runtime.getURL("informations/update.pdf") });
+//     }
+// });
+
+async function analyse(input, items) {
+    let words;
+    console.log(items)
+    if(items.overideSentimentList.length !== 0){
+        words = items.overideSentimentList
+    }else{
+        let req = await fetch(baseRRSURL + "/rickrollkeywords");
+        let res = await req.json();
+        words = res.result;
     }
-});
+    
+    let score = 0;
+    for(i in words){
+        if(input.toLowerCase().includes(words[i].toLowerCase()) == true){
+            score += 1
+        }
+    }
+
+    return score;
+}

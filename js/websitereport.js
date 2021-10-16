@@ -13,7 +13,6 @@
 
     req.onreadystatechange = function() { // Call a function when the state changes.
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            console.log(this.response)
             if(JSON.parse(this.response).error == false){
                 alert("Success! This link has been submitted for review!")
                 window.location.reload()
