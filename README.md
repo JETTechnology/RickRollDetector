@@ -1,5 +1,9 @@
 # RickRollDetector
 
+## What is the current latest stable release?
+
+v1.0 is the official stable version and is pending review from the Google Extensions store. However, v1.1 is now near completion and will be sent for review whenever we have a chance to do so.
+
 ## Is this extensions published on google chrome extensions store?
 
 It is currently not published. However, it is currently pending review from the google team, and version 1.0 will be up whenever it is approved. 
@@ -8,11 +12,11 @@ It is currently not published. However, it is currently pending review from the 
 
 No, v1.0 is the latest stable version of this extension, as the code in the master branch of this github repo is a work in progress to v1.1. After v1.1 is released, it will be migrated to a branch called stable and master branch will always be the experimental build.
 
-## Can I install the current WIP v1.1?
+## Is it possible to install shipment-ready builds?
 
-Of Course! Follow the following step to manually add it to your google chrome browser
+Shipment Ready Builds are the builds queued for update on the Google Extension store. Shipment Ready builds reside on branches following the template `shipment-ready-x` which x is the version of the shipment(the version it will be on once it updates to the store).
 
-1. Download the code by pressing on the green button `Code` at the home repo page and then press on `Download ZIP`.
+1. Go to the `shipment-ready-1.1` branch and then Download the code by pressing on the green button `Code` at the home repo page and then press on `Download ZIP`.
 2. Extract the folder you have just downloaded.
 3. Go into the extracted folder, where you can see manifest.json. Select Everything in that folder and them compress them into a zip folder.
 4. Now you should have a zip file with all of the extensions file in it.
@@ -21,8 +25,28 @@ Of Course! Follow the following step to manually add it to your google chrome br
 7. Click on `Load unpacked` and then select the zip file you created.
 8. Tada! It is installed to your browser manually
 
-Note that manual installations won't receive auto-update, and no support will be provided by JETTechnologies except for security related issues.
+Even though the branch is named `shipment-ready-x` it will still receive updates before official release. Any updates to this branch will not be announced on Discord, but any new shipment-release branch creations will be announced.
+
+## I want to try out new things, how can I download experimental builds?
+
+It is highly recommended to use the `shipment-ready-x` builds as they are much more stable than `experimental` builds. Proceed at your own risk.
+
+1. Go to the `experimental` branch and then Download the code by pressing on the green button `Code` at the home repo page and then press on `Download ZIP`.
+2. Extract the folder you have just downloaded.
+3. Go into the extracted folder, where you can see manifest.json. Select Everything in that folder and them compress them into a zip folder.
+4. Now you should have a zip file with all of the extensions file in it.
+5. Go to chrome://extensions in your google chrome browser.
+6. Enable Develper Mode on the top right corner
+7. Click on `Load unpacked` and then select the zip file you created.
+8. Tada! It is installed to your browser manually
+
+Experimental builds releases will not be announced on our Discord nor will ANY support be provided anywhere.
 
 ## I see error in the chrome://extensions extension profile!
 
 In most cases, that is perfectly normal and won't affect your usage of the extension. However, if it is something that affects the use of the extensions, submit a bug report by using the extension menu(click on the extension icon), or [click here](https://forms.gle/wXihhprFn6PpxbGq8).
+
+## Support
+
+- Join our [Discord](https://discord.gg/3nfh2vxrcB)
+- Email us at JETTechnologies@outlook.com

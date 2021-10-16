@@ -37,7 +37,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
 
                     fetch(fullUrl).then(r => r.text()).then(async result => {
                         let res = await analyse(result, items)
-                        console.log((11 - parseInt(items.sentimentAnalyse)), res)
+                        console.log(res)
                         if(res > (11 - parseInt(items.sentimentAnalyse))){
                             chrome.tabs.update({ url: chrome.runtime.getURL("html/warning.html") + "?url="+fullUrl });
                         }
@@ -71,19 +71,18 @@ function getQueryString(name, url = window.location.href) {
 
 
 
-// chrome.runtime.onInstalled.addListener(function(details){
-//     if(details.reason == "install"){
-//         //call a function to handle a first install
-//         chrome.tabs.create({ url: chrome.runtime.getURL("informations/welcome.pdf") });
-//     }else if(details.reason == "update"){
-//         //call a function to handle an update
-//         chrome.tabs.create({ url: chrome.runtime.getURL("informations/update.pdf") });
-//     }
-// });
+chrome.runtime.onInstalled.addListener(function(details){
+    if(details.reason == "install"){
+        //call a function to handle a first install
+        chrome.tabs.create({ url: chrome.runtime.getURL("informations/manual.pdf") });
+    }else if(details.reason == "update"){
+        //call a function to handle an update
+        chrome.tabs.create({ url: chrome.runtime.getURL("informations/changelog.pdf") });
+    }
+});
 
 async function analyse(input, items) {
     let words;
-    console.log(items)
     if(items.overideSentimentList.length !== 0){
         words = items.overideSentimentList
     }else{

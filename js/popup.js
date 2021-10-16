@@ -1,5 +1,5 @@
 function openManual() {
-    chrome.tabs.create({ url: chrome.runtime.getURL("informations/welcome.pdf") });
+    chrome.tabs.create({ url: chrome.runtime.getURL("informations/manual.pdf") });
 }
 
 function openSetting() {
@@ -15,7 +15,7 @@ function openWebsiteReport() {
 }
 
 function openChangelog() {
-    chrome.tabs.create({ url: chrome.runtime.getURL("informations/update.pdf") });
+    chrome.tabs.create({ url: chrome.runtime.getURL("informations/changelog.pdf") });
 }
 
 
