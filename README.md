@@ -6,7 +6,7 @@ It is currently not published. However, it is currently pending review from the 
 
 ## Is the code in this github repo v1.0?
 
-No, v1.0 is the latest stable version of this extensions, the code in the master branch is a work in progress to v1.1. After v1.1 is released, it will be migrated to a branch called stable and master branch will always be the experimental build.
+No, v1.0 is the latest stable version of this extension, as the code in the master branch of this github repo is a work in progress to v1.1. After v1.1 is released, it will be migrated to a branch called stable and master branch will always be the experimental build.
 
 ## Can I install the current WIP v1.1?
 
