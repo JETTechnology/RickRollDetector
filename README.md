@@ -23,6 +23,6 @@ Of Course! Follow the following step to manually add it to your google chrome br
 
 Note that manual installations won't receive auto-update!
 
-## I see error in chrome://extensions profile!
+## I see error in the chrome://extensions extension profile!
 
 In most cases, that is perfectly normal and won't affect your usage of the extension. However, if it is something that affects the use of the extensions, submit a bug report by using the extension menu(click on the extension icon), or [click here](https://forms.gle/wXihhprFn6PpxbGq8).
