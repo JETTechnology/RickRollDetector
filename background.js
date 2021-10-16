@@ -1,5 +1,5 @@
 let defaultop = {
-    whitelisted_website: ["https://www.instagram.com", "https://www.twitter.com", "https://www.facebook.com", "https://www.google.com"],
+    whitelisted_website: ["https://docs.google.com", "https://www.instagram.com", "https://www.twitter.com", "https://www.facebook.com", "https://www.google.com"],
     enabled: true,
     rrsenabled: true
 }
@@ -21,7 +21,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                     let res = JSON.parse(result);
 
                     if(res.error == false && items.rrsenabled == true){
-                        console.log("workrjjr")
                         if(res.result.includes(fullUrl) == true){
                             console.log("rick roll detected!")
                             chrome.tabs.update({ url: chrome.runtime.getURL("html/warning.html") + "?rrs=true&url="+fullUrl });

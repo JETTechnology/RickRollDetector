@@ -1,5 +1,5 @@
 let defaultop = {
-    whitelisted_website: ["https://www.instagram.com", "https://www.twitter.com", "https://www.facebook.com", "https://www.google.com"],
+    whitelisted_website: ["https://docs.google.com", "https://www.instagram.com", "https://www.twitter.com", "https://www.facebook.com", "https://www.google.com"],
     enabled: true,
     rrsenabled: true
   }

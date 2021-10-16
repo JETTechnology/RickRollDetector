@@ -14,8 +14,13 @@ function openWebsiteReport() {
     chrome.tabs.create({ url: chrome.runtime.getURL("html/websitereport.html") });
 }
 
+function openChangelog() {
+    chrome.tabs.create({ url: chrome.runtime.getURL("informations/update.pdf") });
+}
+
 
 document.getElementById('openManual').addEventListener('click', openManual);
 document.getElementById('openSetting').addEventListener('click', openSetting);
 document.getElementById('giveFeedback').addEventListener('click', giveFeedback);
 document.getElementById('openWebsiteReport').addEventListener('click', openWebsiteReport);
+document.getElementById('openChangelog').addEventListener('click', openChangelog);
