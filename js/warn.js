@@ -37,7 +37,12 @@ function allow() {
     
     document.getElementById("continue").href = urlParams.get("url")
 
-}   
+}  
+
+function back() {
+    window.history.go(-2)
+}  
 
 
 document.getElementById('continue').addEventListener('click', allow);
+document.getElementById('close').addEventListener('click', back);
