@@ -14,7 +14,7 @@ Of Course! Follow the following step to manually add it to your google chrome br
 
 1. Download the code by pressing on the green button `Code` at the home repo page and then press on `Download ZIP`.
 2. Extract the folder you have just downloaded.
-3. Go into the extracted folder, where you can see manifest.json. Select Everything in the folder and them compress them into a zip folder.
+3. Go into the extracted folder, where you can see manifest.json. Select Everything in that folder and them compress them into a zip folder.
 4. Now you should have a zip file with all of the extensions file in it.
 5. Go to chrome://extensions in your google chrome browser.
 6. Enable Develper Mode on the top right corner
