@@ -21,7 +21,7 @@ Of Course! Follow the following step to manually add it to your google chrome br
 7. Click on `Load unpacked` and then select the zip file you created.
 8. Tada! It is installed to your browser manually
 
-Note that manual installations won't receive auto-update!
+Note that manual installations won't receive auto-update, and no support will be provided by JETTechnologies except for security related issues.
 
 ## I see error in the chrome://extensions extension profile!
 
