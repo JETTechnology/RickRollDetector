@@ -1,6 +1,7 @@
 let defaultop = {
     whitelisted_website: ["https://www.instagram.com", "https://www.twitter.com", "https://www.facebook.com", "https://www.google.com"],
-    enabled: true
+    enabled: true,
+    rrsenabled: true
   }
 
 function updateQueryStringParameter(uri, key, value) {
@@ -42,6 +43,13 @@ function allow() {
 function back() {
     window.history.go(-2)
 }  
+
+window.onload = function() {
+    let urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.get("rrs") == "true" || urlParams.get("rrs") == true){
+        document.getElementById("warning-msg").innerText = `The next page contains either a rickroll or a link to rickroll, as reported by users using this extensions. So we blocked it! However, You could get access to the webpage by adding the domain to the whitelist(by clicking "Enter the Danger Zone" below)!`
+    }
+}
 
 
 document.getElementById('continue').addEventListener('click', allow);

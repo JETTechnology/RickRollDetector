@@ -1,15 +1,18 @@
 let defaultop = {
   whitelisted_website: ["https://www.instagram.com", "https://www.twitter.com", "https://www.facebook.com", "https://www.google.com"],
-  enabled: true
+  enabled: true,
+  rrsenabled: true
 }
 
 
 function save_options() {
     var whitelisted = document.getElementById('whitelisted_urls').value.replace(/ /g, "").replace(/\n/g, "").split(",");
     var enabled = document.getElementById('enabled').checked;
+    var rrsenabled = document.getElementById('rrsenabled').checked;
     chrome.storage.sync.set({
       whitelisted_website: whitelisted,
-      enabled: enabled
+      enabled: enabled,
+      rrsenabled: rrsenabled
     }, function() {
       // Update status to let user know options were saved.
       var status = document.getElementById('status');
@@ -27,6 +30,7 @@ function save_options() {
     chrome.storage.sync.get(defaultop, function(items) {
       document.getElementById('whitelisted_urls').value = items.whitelisted_website.join(", ");
       document.getElementById('enabled').checked = items.enabled;
+      document.getElementById('rrsenabled').checked = items.rrsenabled;
     });
   }
 

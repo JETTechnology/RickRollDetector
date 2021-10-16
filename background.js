@@ -1,6 +1,7 @@
 let defaultop = {
     whitelisted_website: ["https://www.instagram.com", "https://www.twitter.com", "https://www.facebook.com", "https://www.google.com"],
-    enabled: true
+    enabled: true,
+    rrsenabled: true
 }
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
@@ -16,19 +17,33 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             if(urls.includes(url) == false && items.enabled == true && tabs[0].url.startsWith("chrome-extension://") !== true && tabs[0].url.startsWith("chrome:") !== true){
                 let fullUrl = tabs[0].url;
 
-                let urlParams = getQueryString("checkforrickroll", fullUrl);
+                fetch("https://RickRollBackend.jerry2006.repl.co/riskywebsiteget").then(r => r.text()).then(result => {
+                    let res = JSON.parse(result);
 
-                if(urlParams != "false"){
+                    if(res.error == false && items.rrsenabled == true){
+                        console.log("workrjjr")
+                        if(res.result.includes(fullUrl) == true){
+                            console.log("rick roll detected!")
+                            chrome.tabs.update({ url: chrome.runtime.getURL("html/warning.html") + "?rrs=true&url="+fullUrl });
+
+                        }
+                    }
+                    
+                                
+                })
 
                     fetch(fullUrl).then(r => r.text()).then(result => {
                         if(result.includes("dQw4w9WgXcQ") == true){
                             console.log("rick roll detected!")
                             chrome.tabs.update({ url: chrome.runtime.getURL("html/warning.html") + "?url="+fullUrl });
                         }
+
             
                     })
 
-                }
+                    
+                    
+                        
 
             }
         });
