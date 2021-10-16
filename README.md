@@ -10,7 +10,7 @@ It is currently not published. However, it is currently pending review from the 
 
 ## Is the code in this github repo v1.0?
 
-No, v1.0 is the latest stable version of this extension, as the code in the master branch of this github repo is a work in progress to v1.1. After v1.1 is released, it will be migrated to a branch called stable and master branch will always be the experimental build.
+No, all of the code in the `stable` and `shipment-ready-1.1` branch are code that is ready for the v1.1 release. Once v1.1 is released, `stable` branch will stay with the v1.1 code, `shipment-ready-1.1` branch will be deleted, and work towards v1.2(this could possibly become the v2.0 update) will be in the experimental build.
 
 ## Is it possible to install shipment-ready builds?
 
