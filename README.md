@@ -12,35 +12,20 @@ It is currently not published. However, it is currently pending review from the 
 
 No, all of the code in the `stable` and `shipment-ready-1.1` branch are code that is ready for the v1.1 release. Once v1.1 is released, `stable` branch will stay with the v1.1 code, `shipment-ready-1.1` branch will be deleted, and work towards v1.2(this could possibly become the v2.0 update) will be in the experimental build.
 
-## Is it possible to install shipment-ready builds?
+## How do I install it?
 
-Shipment Ready Builds are the builds queued for update on the Google Extension store. Shipment Ready builds reside on branches following the template `shipment-ready-x` which x is the version of the shipment(the version it will be on once it updates to the store).
+stable: the latest release on chrome store with minimal bugs
+shipment-ready-x: release ready for publish to the chrome store
+experimental: WIP to the next version
 
-1. Go to the `shipment-ready-1.1` branch and then Download the code by pressing on the green button `Code` at the home repo page and then press on `Download ZIP`.
+1. Go to the branch you want to install! and then Download the code by pressing on the green button `Code` at the home repo page and then press on `Download ZIP`.
 2. Extract the folder you have just downloaded.
-3. Go into the extracted folder, where you can see manifest.json. Select Everything in that folder and them compress them into a zip folder.
-4. Now you should have a zip file with all of the extensions file in it.
+3. Go into the extracted folder, where you can see manifest.json.
+4. Copy the route to the folder.
 5. Go to chrome://extensions in your google chrome browser.
 6. Enable Develper Mode on the top right corner
-7. Click on `Load unpacked` and then select the zip file you created.
+7. Click on `Load unpacked` and then paste the route you copied before in the explorer, then press select
 8. Tada! It is installed to your browser manually
-
-Even though the branch is named `shipment-ready-x` it will still receive updates before official release. Any updates to this branch will not be announced on Discord, but any new shipment-release branch creations will be announced.
-
-## I want to try out new things, how can I download experimental builds?
-
-It is highly recommended to use the `shipment-ready-x` builds as they are much more stable than `experimental` builds. Proceed at your own risk.
-
-1. Go to the `experimental` branch and then Download the code by pressing on the green button `Code` at the home repo page and then press on `Download ZIP`.
-2. Extract the folder you have just downloaded.
-3. Go into the extracted folder, where you can see manifest.json. Select Everything in that folder and them compress them into a zip folder.
-4. Now you should have a zip file with all of the extensions file in it.
-5. Go to chrome://extensions in your google chrome browser.
-6. Enable Develper Mode on the top right corner
-7. Click on `Load unpacked` and then select the zip file you created.
-8. Tada! It is installed to your browser manually
-
-Experimental builds releases will not be announced on our Discord nor will ANY support be provided anywhere.
 
 ## I see error in the chrome://extensions extension profile!
 
